@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Zohir">
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.svg">
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendor/pickr/css/nano.min.css">
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- =======================================================
+    * Template Name: QR Code Generator - v1.0
+    * Template URL: https://zohirs.com
+    * Author: Zohir
+    ======================================================== -->
+</head>
+
+<body>
+
+    <section class="app-section">
+        <div class="container">
+            <div class="section-heading">
+                <h1>QR Code Generator: Create your Free QR Code</h1>
+                <h5>Customize it with your color in 3 simple steps</h5>
+            </div>
+            <div class="app-container">
+                <div class="app-tab">
+                    <div class="type-tab">
+                        <button type="button" class="btn tab-button selected" data-type="text"><i
+                                class="bi bi-journal-text"></i>Text</button>
+                        <button type="button" class="btn tab-button" data-type="url"><i
+                                class="bi bi-globe"></i>URL</button>
+                        <button type="button" class="btn tab-button" data-type="phone"><i
+                                class="bi bi-telephone"></i>Phone</button>
+                        <button type="button" class="btn tab-button" data-type="email"><i
+                                class="bi bi-envelope"></i>Email</button>
+                        <button type="button" class="btn tab-button" data-type="whatsapp"><i
+                                class="bi bi-whatsapp"></i>WhatsApp</button>
+                        <button type="button" class="btn tab-button" data-type="vcard"><i
+                                class="bi bi-person-vcard"></i>vCard</button>
+                        <button type="button" class="btn tab-button" data-type="wifi"><i
+                                class="bi bi-wifi"></i>Wi-Fi</button>
+                        <button type="button" class="btn tab-button" data-type="sms"><i
+                                class="bi bi-chat-left-dots"></i>SMS</button>
+                    </div>
+                </div>
+                <div class="app-inner">
+                    <div class="info-col">
+                        <form class="needs-validation" novalidate>
+                            <div class="dynamic-field">
+                                <h2 class="group-heading"><span class="steps">01</span>Complete Content:</h2>
+                                <div id="dynamicFields"></div>
+                            </div>
+                            <div class="design-field">
+                                <h2 class="group-heading"><span class="steps">02</span>Customize Design:</h2>
+                                <div class="row g-2 g-md-5">
+                                    <div class="col-12 col-lg-3">
+                                        <div class="color-picker-wrapper">
+                                            <label for="qrColor">QR Code Color:</label>
+                                            <div id="qrColorPicker"></div>
+                                            <input type="text" id="qrColor" />
+                                        </div>
+                                        <div class="color-picker-wrapper">
+                                            <label for="qrBGColor">Background Color:</label>
+                                            <div id="qrBGColorPicker"></div>
+                                            <input type="text" id="qrBGColor" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-9">
+                                        <div class="input-group">
+                                            <label for="dotStyle">Shape style:</label>
+                                            <div class="dot-styles" id="dotStyles">
+                                                <label class="btn dot-style-btn"><input type="radio" name="dotStyle"
+                                                        value="square" checked><svg
+                                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                                        focusable="false" aria-hidden="true" viewBox="0 0 80 80">
+                                                        <g>
+                                                            <path
+                                                                d="M48,32h16v32h-16v-8h8v-8h-8v-8h-8v-8h-8v-8h8v-8h8v16Zm8-16v8h8v-8h-8Zm-24,8v-8H16v16h8v-8h8Zm16,24v8h-8v8H16v-24h8v-8h8v8h8v8h8Zm-16,0h-8v8h8v-8Z">
+                                                            </path>
+                                                        </g>
+                                                    </svg></label>
+                                                <label class="btn dot-style-btn"><input type="radio" name="dotStyle" value="rounded"><svg
+                                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                                        focusable="false" aria-hidden="true" viewBox="0 0 80 80">
+                                                        <g>
+                                                            <path
+                                                                d="M58,16h4c1.1,0,2,.9,2,2v4c0,1.1-.9,2-2,2h-4c-1.1,0-2-.9-2-2v-4c0-1.1,.9-2,2-2ZM18,32h4c1.1,0,2-.9,2-2v-6h6c1.1,0,2-.9,2-2v-4c0-1.1-.9-2-2-2h-12c-1.1,0-2,.9-2,2v12c0,1.1,.9,2,2,2Zm30,18c0-1.1-.9-2-2-2h-6v-6c0-1.1-.9-2-2-2h-6v-6c0-1.1-.9-2-2-2h-4c-1.1,0-2,.9-2,2v6h-6c-1.1,0-2,.9-2,2v20c0,1.1,.9,2,2,2h20c1.1,0,2-.9,2-2v-6h6c1.1,0,2-.9,2-2v-4Zm-16,6h-8v-8h8v8Zm30-24h-14v-14c0-1.1-.9-2-2-2h-4c-1.1,0-2,.9-2,2v6h-6c-1.1,0-2,.9-2,2v4c0,1.1,.9,2,2,2h6v6c0,1.1,.9,2,2,2h6v6c0,1.1,.9,2,2,2h6v8h-6c-1.1,0-2,.9-2,2v4c0,1.1,.9,2,2,2h12c1.1,0,2-.9,2-2v-28c0-1.1-.9-2-2-2Z">
+                                                            </path>
+                                                        </g>
+                                                    </svg></label>
+                                                <label class="btn dot-style-btn"><input type="radio" name="dotStyle" value="dot"> <svg
+                                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                                        focusable="false" aria-hidden="true" viewBox="0 0 80 80">
+                                                        <g>
+                                                            <path
+                                                                d="M28,32c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm16,16c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm16-8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-16,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm16-24c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8-8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8-16c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0,16c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4ZM20,24c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0-8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm16,32c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8-8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm8,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm0,8c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Zm-8,0c2.21,0,4,1.79,4,4s-1.79,4-4,4-4-1.79-4-4,1.79-4,4-4Z">
+                                                            </path>
+                                                        </g>
+                                                    </svg></label>
+                                                <label class="btn dot-style-btn"><input type="radio" name="dotStyle" value="classy"><svg
+                                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                                        focusable="false" aria-hidden="true" viewBox="0 0 80 80">
+                                                        <g>
+                                                            <path
+                                                                d="M47.91,32c.09-.33,.09-16,.09-16h-2c-3.31,0-6,2.69-6,6v2h-2c-3.31,0-6,2.69-6,6v2h8v8h8v8h8v8h-2c-3.31,0-6,2.69-6,6v2h10c3.31,0,6-2.69,6-6h0v-26h-16.09Zm14.09-16c-3.31,0-6,2.69-6,6v2h2c3.31,0,6-2.69,6-6v-2h-2ZM24,26v-2h2c3.31,0,6-2.69,6-6v-2h-10c-3.31,0-6,2.69-6,6v10h2c3.31,0,6-2.69,6-6Zm16,14h-8v-8h-2c-3.31,0-6,2.69-6,6v2h-2c-3.31,0-6,2.69-6,6v18h18c3.31,0,6-2.69,6-6h0v-2h2c3.31,0,6-2.69,6-6v-2h-8v-8Zm-16,16v-8h8v8h-8Z">
+                                                            </path>
+                                                        </g>
+                                                    </svg></label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="qrLogo">Insert Logo:</label>
+                                            <input type="file" id="qrLogo" name="qrLogo" accept="image/*" />
+                                        </div>
+                                        <!-- <div class="input-group">
+                                            <label for="qrFrame">Add Frame:</label>
+                                            <div class="qr-frams" id="qrBGFrames">
+                                                <label class="btn fram-btn">
+                                                    <input type="radio" name="qrFrame" id="frame0" title="qrFrame-0"
+                                                        value="" checked>
+                                                    <i class="bi bi-ban"></i>
+                                                </label>
+                                                <label class="btn fram-btn">
+                                                    <input type="radio" name="qrFrame" id="frame1" title="qrFrame-1"
+                                                        value="/assets/img/image/frame-1.svg">
+                                                    <i class="bi bi-easel2"></i>
+                                                </label>
+                                                <label class="btn fram-btn">
+                                                    <input type="radio" name="qrFrame" id="frame2" title="qrFrame-2"
+                                                        value="/assets/img/image/frame-2.svg">
+                                                    <i class="bi bi-clipboard"></i>
+                                                </label>
+                                                <label class="btn fram-btn">
+                                                    <input type="radio" name="qrFrame" id="frame3" title="qrFrame-3"
+                                                        value="/assets/img/image/frame-3.svg">
+                                                    <i class="bi bi-display"></i>
+                                                </label>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-big mt-2" id="generateBtn">Generate QR</button>
+                        </form>
+                    </div>
+                    <div class="preview-col">
+                        <h2 class="group-heading"><span class="steps">03</span>Download QR</h2>
+                        <div id="qrPreview">
+                            <canvas style="background-image: url(/assets/img/image/qr-bg.svg);"></canvas>
+                        </div>
+                        <div id="downloadBtn">
+                            <button type="button" class="btn download-btn" data-format="png">Download PNG</button>
+                            <button type="button" class="btn download-btn" data-format="jpg">Download JPG</button>
+                            <button type="button" class="btn download-btn" data-format="svg">Download SVG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Page Content -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/qrcode/qrcode.min.js"></script>
+    <script src="assets/vendor/qrcode/qr-code-styling.js"></script>
+    <script src="assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/pickr/js/pickr.min.js"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
